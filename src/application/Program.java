@@ -6,6 +6,7 @@ import model.entities.Department;
 import model.entities.Seller;
 
 import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 public class Program {
@@ -30,5 +31,11 @@ public class Program {
         for(Seller obj : sellers){
             System.out.println(obj);
         }
+
+        System.out.println("===Test 4: seller insert===");
+        Seller newSeller = new Seller(null,"Greg","greg@gmail.com",new Date(),4000.0, new Department(1,"Computers"));
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New id = "+ newSeller.getId());
+
     }
 }
